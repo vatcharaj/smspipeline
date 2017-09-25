@@ -1,0 +1,495 @@
+﻿/* DEFAULTS
+----------------------------------------------------------*/
+
+/*body   
+{
+    background:  #CFCFCF;
+    font-size: .80em;
+    font-family: "Helvetica Neue", "Lucida Grande", "Segoe UI", Arial, Helvetica, Verdana, sans-serif;
+    margin: 0px;
+    padding: 0px;
+    color: #696969;
+}*/
+html { height: 100% !important; }
+body {height: 100% !important; }
+body .content img {
+  max-width: 100%;
+  height: auto;
+  width: auto \9;
+}
+#ctl01{height: 100% ; }
+#content{min-height: 100% ; }
+a:link, a:visited
+{
+    color: #034af3;
+}
+
+a:hover
+{
+    color: #1d60ff;
+    text-decoration: none;
+}
+
+a:active
+{
+    color: #034af3;
+}
+
+p
+{
+    margin-bottom: 10px;
+    line-height: 1.6em;
+}
+
+
+/* HEADINGS   
+----------------------------------------------------------*/
+
+h1, h2, h3, h4, h5, h6
+{
+    font-size: 1.5em;
+    color: #666666;
+    font-variant: small-caps;
+    text-transform: none;
+    font-weight: 200;
+    margin-bottom: 0px;
+}
+
+h1
+{
+    font-size: 1.6em;
+    padding-bottom: 0px;
+    margin-bottom: 0px;
+}
+
+h2
+{
+    font-size: 1.5em;
+    font-weight: 600;
+}
+
+h3
+{
+    font-size: 1.2em;
+}
+
+h4
+{
+    font-size: 1.1em;
+}
+
+h5, h6
+{
+    font-size: 1em;
+}
+
+/* this rule styles <h1> and <h2> tags that are the 
+first child of the left and right table columns */
+.rightColumn > h1, .rightColumn > h2, .leftColumn > h1, .leftColumn > h2
+{
+    margin-top: 0px;
+}
+
+
+/* PRIMARY LAYOUT ELEMENTS   
+----------------------------------------------------------*/
+
+.page
+{
+    width: 95%;
+    background-color: #fff;
+    margin: 0px auto 0px auto;
+    border: 1px solid #496077;
+  
+  
+}
+
+.header
+{
+    position: relative;
+    margin: 0px;
+    padding: 0px;
+    background: #fafafa;
+    width: 100%;
+    top: 0px;
+    left: 0px;
+   
+}
+
+.header h1
+{
+    font-weight: 100;
+    margin: 0px;
+    padding: 0px 0px 0px 20px;
+    color: #696969;
+    border: none;
+    line-height: 2em;
+    font-size: 1.5em;
+    font-style:oblique;
+}
+
+.main
+{
+    padding: 0px 12px;
+    /*padding: 0px 20px 20px 80px;*/
+    margin: 17px 8px 8px 8px;
+   /* min-height: 500px;*/
+
+}
+
+.leftCol
+{
+    padding: 6px 0px;
+    margin: 12px 8px 8px 8px;
+    width: 200px;
+    min-height: 200px;
+}
+
+.footer
+{
+    color: #4e5766;
+    padding: 8px 0px 0px 0px;
+    margin: 0px auto;
+    text-align: center;
+    line-height: normal;
+}
+
+
+/* TAB MENU   
+----------------------------------------------------------*/
+
+div.hideSkiplink
+{
+    background-color:#fafafa;
+    width:99.9%;
+    border:1px solid #f2f2f2;
+     border-left-style:none;
+}
+
+div.menu
+{
+    padding: 4px 0px 4px 8px;
+}
+
+div.menu ul
+{
+    list-style: none;
+    margin: 0px;
+    padding: 0px;
+    width: auto;
+}
+
+div.menu ul li a, div.menu ul li a:visited
+{
+    background-color: #fafafa;
+    border-right: 1px solid #ffffff;
+    border-left: 1px solid #f2f2f2;
+    color: #777777;
+    display: block;
+    line-height: 1.35em;
+    padding: 4px 20px;
+    text-decoration: none;
+    white-space: nowrap;
+}
+
+div.menu ul li a:hover
+{
+    background-color: #bfcbd6;
+    color: #465c71;
+    text-decoration: none;
+}
+
+div.menu ul li a:active
+{
+    background-color: #465c71;
+    color: #cfdbe6;
+    text-decoration: none;
+}
+
+/* FORM ELEMENTS   
+----------------------------------------------------------*/
+
+fieldset
+{
+    margin: 1em 0px;
+    padding: 1em;
+    border: 1px solid #ccc;
+    background-color:#F5F5F5;
+}
+
+fieldset p 
+{
+    margin: 2px 12px 10px 10px;
+}
+
+fieldset.login label, fieldset.register label, fieldset.changePassword label
+{
+    display: block;
+}
+
+fieldset label.inline 
+{
+    display: inline;
+}
+
+legend 
+{
+    font-size: 1.1em;
+    font-weight: 600;
+    padding: 2px 4px 8px 4px;
+}
+
+input.textEntry 
+{
+    width: 320px;
+    border: 1px solid #ccc;
+}
+
+input.passwordEntry 
+{
+    width: 320px;
+    border: 1px solid #ccc;
+}
+
+div.accountInfo
+{
+    width: 42%;
+}
+
+/* MISC  
+----------------------------------------------------------*/
+
+.clear
+{
+    clear: both;
+}
+
+.title
+{
+    display: block;
+    float: left;
+    text-align: left;
+    width: auto;
+}
+
+.loginDisplay
+{
+    font-size: 0.8em;
+    display: block;
+    text-align: right;
+   /* padding: 10px;*/
+      margin-left: 78%;
+    margin-top: 2px;
+    position:absolute;
+    /*color: White;*/
+}
+
+.loginDisplay a:link
+{
+   /* color: white;*/
+}
+
+.loginDisplay a:visited
+{
+    /*color: white;*/
+}
+
+.loginDisplay a:hover
+{
+    color: white;
+}
+
+.failureNotification
+{
+    font-size: 1.2em;
+    color: Red;
+}
+
+.bold
+{
+    font-weight: bold;
+}
+
+.submitButton
+{
+    text-align: right;
+    padding-right: 10px;
+}
+.slidingDiv {
+	height:280px;
+	background-color: #F5F5F5;
+	padding:20px;
+	margin-top:10px;
+	border-bottom:5px solid #F5F5F5;
+}
+.HourlyDiv
+{
+    height:280px;
+	background-color: #F5F5F5;
+	padding:20px;
+	margin-top:10px;
+	border-bottom:5px solid #F5F5F5;
+    }
+.show_hide {
+	display:none;
+	
+}
+.showHideHourly{
+display:none;
+    
+ }
+  .transparent {
+    filter:alpha(opacity=90);
+    background-color:green;
+    display:none;
+    width:170;
+    height:100;
+    position:absolute;
+    color: white;
+    border: 1 green solid;
+}
+ .grpPanel {
+  
+  position: fixed;
+  top: 10%;
+  left: 50%;
+  z-index: 1050;
+  width: 760px;
+   max-height:400px;
+   /*overflow:auto;*/
+  margin-left: -280px;
+  background-color: #ffffff;
+  border: 1px solid #999;
+  border: 1px solid rgba(0, 0, 0, 0.3);
+  *border: 1px solid #999;
+  -webkit-border-radius: 6px;
+     -moz-border-radius: 6px;
+          border-radius: 6px;
+  outline: none;
+  -webkit-box-shadow: 0 3px 7px rgba(0, 0, 0, 0.3);
+     -moz-box-shadow: 0 3px 7px rgba(0, 0, 0, 0.3);
+          box-shadow: 0 3px 7px rgba(0, 0, 0, 0.3);
+  -webkit-background-clip: padding-box;
+     -moz-background-clip: padding-box;
+          background-clip: padding-box;
+  
+}
+.reportresultpanel
+{
+  
+  position: fixed;
+  top: 10%;
+  left: 50%;
+  z-index: 1050;
+   max-height:700px;
+    width: 80%;
+   /*overflow:auto;*/
+ margin-left: -40%;
+/* margin:0 auto;*/
+  background-color: #ffffff;
+  border: 1px solid #999;
+  border: 1px solid rgba(0, 0, 0, 0.3);
+  *border: 1px solid #999;
+  -webkit-border-radius: 6px;
+     -moz-border-radius: 6px;
+          border-radius: 6px;
+  outline: none;
+  -webkit-box-shadow: 0 3px 7px rgba(0, 0, 0, 0.3);
+     -moz-box-shadow: 0 3px 7px rgba(0, 0, 0, 0.3);
+          box-shadow: 0 3px 7px rgba(0, 0, 0, 0.3);
+  -webkit-background-clip: padding-box;
+     -moz-background-clip: padding-box;
+          background-clip: padding-box;
+  
+}
+.dimmer
+{
+   
+    position:fixed;
+    width:100%;
+    height:100%;
+    left:0px;
+    top:0px;
+    padding:40px;
+    z-index:1000;
+    background-color: #000000;
+     opacity: 0.7; 
+     
+  
+   
+}
+.timepick
+{
+    width:70px;
+    height: 25px;
+    margin-bottom:0px
+    }
+ .recptable
+  {
+        border:1px solid #f2f2f2 ;
+  }
+  .tree
+  {
+         width:25%;
+         vertical-align:text-top;
+   }
+   .detailRci 
+   {
+        vertical-align:text-top;
+        width:65%;
+       }
+       .listBoxH
+       {
+           height:200px!important;
+   }
+  .GRIDDETAIL
+  {
+      width:100%;
+      font-size:12px;
+      
+   }
+   th a:link, a:visited 
+   {
+       color:#333333;
+       }
+#MainContent_TabContainer1_PPLTabPanel_PPLE_TCS_cl label,
+#MainContent_TabContainer1_PPLTabPanel_PPLE_CS_cl label,
+#MainContent_TabContainer1_PPLTabPanel_PPLE_GC_cl  label,
+#MainContent_TabContainer1_PPLTabPanel_PPLE_PTTB_cl  label,
+#MainContent_TabContainer1_PPLTabPanel_PPLE_PTT_cl  label,
+#SenderCheckLabel
+{
+     display:inline;
+     margin:10px;
+     font-size: 10pt;
+ }
+#MainContent_TabContainer1_EditPanel_GE_cl label
+{
+     display:inline;
+     margin:10px;
+     font-size: 10pt;
+ }
+ #MainContent_REPORTCONTROL_ReportResultView td,
+  #MainContent_REPORTCONTROL_ReportResultView  input[type="submit"],
+  #MainContent_REPORTCONTROL_ReportResultView  input[type="button"],
+   #MainContent_REPORTCONTROL_ReportResultView  input[type="text"]
+ {
+     font-size:10px;
+     max-width:200px;
+     
+     }
+      #MainContent_REPORTCONTROL_ReportResultView th
+      {
+          font-size:11px;
+          }
+      
+ 
+.scrollbar
+{
+ 
+overflow:auto;
+max-height:780px;
+
+    }
+    
+
