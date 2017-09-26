@@ -626,7 +626,7 @@ namespace sms_pipeLine
                 Result_Dt.Columns.Add("NAME", typeof(string));
                 Result_Dt.Columns.Add("COMPANY", typeof(string));
                 Result_Dt.Columns.Add("GROUP_ID", typeof(string));
-                Result_Dt.Rows.Add();
+                //Result_Dt.Rows.Add();
                 if (PTTB_str != "") { Result_Dt.Merge(FindPttBInPis(PTTB_str)); }
                 if (PTT_str != "") { Result_Dt.Merge(FindPttInPis(PTT_str)); }
                 if (GC_str != "") { Result_Dt.Merge(cc2.LoadMobileInGC(GC_str)); }
@@ -635,6 +635,23 @@ namespace sms_pipeLine
                 if (TEST_str != "") { Result_Dt.Merge(cc2.LoadMobileInTest(TEST_str)); }
 
                 DataTable output = Result_Dt.Rows.Count > 0 ? Result_Dt.Copy() : null;
+
+                DataView dv = new DataView(output);
+                dv.Sort = "MOBILE";
+                DataTable output2 = dv.ToTable();
+
+                var dis = output.AsEnumerable().Select(row => new
+                {
+                    MOBILE = row.Field<string>("MOBILE"),
+                    DEPARTMENT_ID = row.Field<string>("DEPARTMENT_ID"),
+                    EMPLOYEE_ID = row.Field<string>("EMPLOYEE_ID"),
+                    NAME = row.Field<string>("NAME"),
+                    COMPANY = row.Field<string>("COMPANY"),
+                    GROUP_ID = row.Field<string>("GROUP_ID")
+                }).GroupBy(x => x.MOBILE).Select(x => x.FirstOrDefault());
+
+                //ScriptManager.RegisterClientScriptBlock(this.Page, this.GetType(), "notext", "alert('"+ output.Rows.Count +","+ dis.Count() + "')", true);
+
                 SendSMS ss = new SendSMS();
                 string resultsent = "";
                 string smsText = MSGTEXT.Text;//SetSMSText();
