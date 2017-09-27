@@ -639,6 +639,13 @@ namespace sms_pipeLine
                 DataView dv = new DataView(output);
                 dv.Sort = "MOBILE";
                 DataTable output2 = dv.ToTable();
+                DataTable newDataTable = new DataTable();
+                newDataTable.Columns.Add("MOBILE", typeof(string));
+                newDataTable.Columns.Add("DEPARTMENT_ID", typeof(string));
+                newDataTable.Columns.Add("EMPLOYEE_ID", typeof(string));
+                newDataTable.Columns.Add("NAME", typeof(string));
+                newDataTable.Columns.Add("COMPANY", typeof(string));
+                newDataTable.Columns.Add("GROUP_ID", typeof(string));
 
                 var dis = output.AsEnumerable().Select(row => new
                 {
@@ -650,19 +657,24 @@ namespace sms_pipeLine
                     GROUP_ID = row.Field<string>("GROUP_ID")
                 }).GroupBy(x => x.MOBILE).Select(x => x.FirstOrDefault());
 
-                //ScriptManager.RegisterClientScriptBlock(this.Page, this.GetType(), "notext", "alert('"+ output.Rows.Count +","+ dis.Count() + "')", true);
+                foreach (var array in dis)
+                {
+                    newDataTable.Rows.Add(array.MOBILE,array.DEPARTMENT_ID,array.EMPLOYEE_ID,array.NAME,array.COMPANY,array.GROUP_ID);
+                }
+
+                ScriptManager.RegisterClientScriptBlock(this.Page, this.GetType(), "notext", "alert('"+ output.Rows.Count +","+ dis.Count() + "')", true);
 
                 SendSMS ss = new SendSMS();
                 string resultsent = "";
                 string smsText = MSGTEXT.Text;//SetSMSText();
                 if (smsText == null)
                     ScriptManager.RegisterClientScriptBlock(this.Page, this.GetType(), "notext", "alert('No Text Message')", true);
-                else if (output == null)
+                else if (dis == null)
                     ScriptManager.RegisterClientScriptBlock(this.Page, this.GetType(), "notext", "alert('No Recipient')", true);
                 else
                 {
-                    DataView view = new DataView(output);
-                    output = view.ToTable(true);
+                    //DataView view = new DataView(dis);
+                    //dis = dis.ToTable(true);
                     string loginName = Session["ID"].ToString();
                     string sendername = "";
                     if (SenderCheck.Checked)
@@ -670,7 +682,7 @@ namespace sms_pipeLine
                     else
                         sendername = "";
 
-                    resultsent = ss.sendSMS_webPost(output, smsText, sendername, loginName);
+                    resultsent = ss.sendSMS_webPost(newDataTable, smsText, sendername, loginName);
                     if (resultsent == "1")
                         ScriptManager.RegisterClientScriptBlock(this.Page, this.GetType(), "notext", "alert('Success')", true);
                     else
