@@ -662,7 +662,7 @@ namespace sms_pipeLine
                     newDataTable.Rows.Add(array.MOBILE,array.DEPARTMENT_ID,array.EMPLOYEE_ID,array.NAME,array.COMPANY,array.GROUP_ID);
                 }
 
-                ScriptManager.RegisterClientScriptBlock(this.Page, this.GetType(), "notext", "alert('"+ output.Rows.Count +","+ dis.Count() + "')", true);
+                //ScriptManager.RegisterClientScriptBlock(this.Page, this.GetType(), "notext", "alert('"+ output.Rows.Count +","+ dis.Count() + "')", true);
 
                 SendSMS ss = new SendSMS();
                 string resultsent = "";
